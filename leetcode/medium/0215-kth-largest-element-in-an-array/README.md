@@ -38,9 +38,9 @@ Output: 4
 ## Solution
 
 **Language:** Java  
-**Runtime:** 71 ms (beats 35.46%)  
-**Memory:** 74.2 MB (beats 77.70%)  
-**Submitted:** 2026-08-30T19:15:39.731Z  
+**Runtime:** 65 ms (beats 63.68%)  
+**Memory:** 73.1 MB (beats 90.65%)  
+**Submitted:** 2026-08-30T19:16:17.742Z  
 
 ```java
 class Solution {
@@ -50,7 +50,7 @@ class Solution {
         for (int num : nums) {
             minHeap.offer(num);
             if (minHeap.size() > k) {
-                minHeap.poll(); // remove smallest, keep only k largest
+                minHeap.poll(); 
             }
         }
         
