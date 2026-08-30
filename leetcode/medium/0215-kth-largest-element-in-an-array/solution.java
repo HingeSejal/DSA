@@ -5,7 +5,7 @@ class Solution {
         for (int num : nums) {
             minHeap.offer(num);
             if (minHeap.size() > k) {
-                minHeap.poll(); // remove smallest, keep only k largest
+                minHeap.poll(); 
             }
         }
         
