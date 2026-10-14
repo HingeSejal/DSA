@@ -77,14 +77,14 @@ The result table is ordered by product_id in ascending order.
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 92 ms  
+**Runtime:** 95 ms  
 **Memory:** 0B  
-**Submitted:** 2026-10-14T13:58:08.614Z  
+**Submitted:** 2026-10-14T14:00:28.355Z  
 
 ```sql
 # Write your MySQL query statement below
 select * from products
-where description REGEXP 'SN[0-9]{4}-[0-9]{4}([^0-9][A-Za-z]|$)'
+where description REGEXP '(^|[A-Za-z0-9])SN[0-9]{4}-[0-9]{4}([^0-9]|$)'
 order by product_id asc;
 ```
 
