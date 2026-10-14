@@ -77,15 +77,19 @@ The result table is ordered by product_id in ascending order.
 ## Solution
 
 **Language:** SQL  
-**Runtime:** 102 ms  
-**Memory:** 0B  
-**Submitted:** 2026-10-14T14:03:49.441Z  
+**Runtime:** 654 ms (beats 9.31%)  
+**Memory:** 0B (beats 100.00%)  
+**Submitted:** 2026-10-14T14:08:46.414Z  
 
 ```sql
 SELECT *
 FROM products
-WHERE description REGEXP 'SN[0-9]{4}-[0-9]{4}([^0-9][A-Za-z]|$)'
-ORDER BY product_id ASC;
+WHERE REGEXP_LIKE(
+    description,
+    '(^|[^A-Za-z0-9])SN[0-9]{4}-[0-9]{4}([^A-Za-z0-9]|$)',
+    'c'
+)
+ORDER BY product_id;
 ```
 
 ---
